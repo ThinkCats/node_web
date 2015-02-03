@@ -1,10 +1,10 @@
 var api=require('./api');
-module.exports = function(app){
+module.exports.app = function(app){
 	app.get('/',function(req,res){
-		res.send('Hello, This is a router page');
+        res.render('index');
 	});
 	app.get('/about',function(req,res){
-		res.send('Welcome about pagessss');
+        res.render('about');
 	});
 	app.get('/hello/:user?',function(req,res){
 		if(req.params.user){

@@ -2,6 +2,7 @@
 	"name":"express_cat",
 	"version":"0.0.1",
 	"dependencies":{
-		"express":"4.X"
+		"express":"4.X",
+        "jade":"1.X"
 	}
 }

@@ -1,5 +1,11 @@
 var express=require('express');
+var routes=require('./router');
 var app=express();
-var routes=require('./router')(app);
+
+// template ( use jade)
+app.set('view engine','jade');
+app.set('views',__dirname+'/public');
+
+routes.app(app);
 
 app.listen(3000);
