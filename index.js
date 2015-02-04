@@ -9,7 +9,7 @@ app.set('views',__dirname+'/public');
 //add post support
 app.use(bodyParser.urlencoded());
 
-routes.app(app);
+routes.index(app);
 
 app.listen(3000);
 

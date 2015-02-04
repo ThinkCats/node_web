@@ -1,6 +1,7 @@
 var api=require('./api');
-var route=require('express').Router();
-module.exports.app = function(app){
+var register=require('./register');
+
+module.exports.index = function(app){
 	app.get('/',function(req,res){
         res.render('index');
 	});
@@ -15,22 +16,15 @@ module.exports.app = function(app){
 			//res.send('hello,'+req.params.user);
             var username=req.params.user;
             console.log(username);
-            //assign a variable
             var option={
                 username:req.params.user
-            }
+            };
             res.render('user',option);
 		}else{
 			res.send('ni hao,guest');
 		}
 	});
-    app.post('/regaccount',function(req,res){
-        console.log('post body:'+req.body);
-        var account=req.body.account;
-        var password=req.body.password;
-        console.log('account:'+account);
-        console.log('password:'+password);
-        res.end('reg success');
-    });
+
+    app.post('/regaccount',register.register);
 	app.get('/api',api.api);
 };
