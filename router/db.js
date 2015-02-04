@@ -15,3 +15,6 @@ module.exports.connects=function(){
     });
 };
 
+module.exports.saveUser=function(req,res){
+
+};
