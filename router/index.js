@@ -1,8 +1,12 @@
 var api=require('./api');
+var route=require('express').Router();
 module.exports.app = function(app){
 	app.get('/',function(req,res){
         res.render('index');
 	});
+    app.get('/reg',function(req,res){
+        res.render('register');
+    });
 	app.get('/about',function(req,res){
         res.render('about');
 	});
@@ -20,5 +24,13 @@ module.exports.app = function(app){
 			res.send('ni hao,guest');
 		}
 	});
+    app.post('/regaccount',function(req,res){
+        console.log('post body:'+req.body);
+        var account=req.body.account;
+        var password=req.body.password;
+        console.log('account:'+account);
+        console.log('password:'+password);
+        res.end('reg success');
+    });
 	app.get('/api',api.api);
 };

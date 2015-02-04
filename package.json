@@ -3,6 +3,8 @@
 	"version":"0.0.1",
 	"dependencies":{
 		"express":"4.X",
-        "jade":"1.X"
+        "jade":"1.X",
+        "cookie-parser": "~1.0.1",
+        "body-parser": "~1.0.2"
 	}
 }
