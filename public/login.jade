@@ -1,0 +1,10 @@
+include ./head.jade
+form(action='/login',method='post')
+    p
+        |account:
+        input(type='text',name='account')
+    p
+        |password:
+        input(type='password',name='password')
+    p
+        input(type='submit',value='submit')

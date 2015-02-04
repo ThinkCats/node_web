@@ -1,5 +1,6 @@
 var api=require('./api');
 var register=require('./register');
+var login=require('./login');
 
 module.exports.index = function(app){
 	app.get('/',function(req,res){
@@ -11,6 +12,10 @@ module.exports.index = function(app){
 	app.get('/about',function(req,res){
         res.render('about');
 	});
+    app.get('/login',function(req,res){
+        res.render('login');
+    });
+
 	app.get('/hello/:user?',function(req,res){
 		if(req.params.user){
 			//res.send('hello,'+req.params.user);
@@ -26,5 +31,6 @@ module.exports.index = function(app){
 	});
 
     app.post('/regaccount',register.register);
+    app.post('/login',login.login);
 	app.get('/api',api.api);
 };

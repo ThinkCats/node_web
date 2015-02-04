@@ -5,6 +5,7 @@ var db=require('./router/db');
 var app=express();
 
 app.set('view engine','jade');
+
 app.set('views',__dirname+'/public');
 
 //add post support
