@@ -1,6 +1,7 @@
 var api=require('./api');
 var register=require('./register');
 var login=require('./login');
+var sessions=require('./session');
 
 module.exports.index = function(app){
 	app.get('/',function(req,res){
@@ -33,4 +34,5 @@ module.exports.index = function(app){
     app.post('/regaccount',register.register);
     app.post('/login',login.login);
 	app.get('/api',api.api);
+    sessions.session(app);
 };
