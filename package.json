@@ -9,6 +9,7 @@
         "mongoose":"3.X",
         "express-session":"1.10.X",
         "parseurl":"1.3.X",
-        "connect-mongo":"0.7.0"
+        "connect-mongo":"0.7.0",
+        "redis":"0.12.1"
 	}
 }
