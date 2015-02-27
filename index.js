@@ -1,6 +1,7 @@
 var express=require('express');
 var bodyParser=require('body-parser');
 var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var routes=require('./router');
 var db=require('./router/db');
 var app=express();
@@ -17,7 +18,12 @@ app.use(session({
     name:'testsession',
     cookie:{maxAge:80000},
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({
+        host:'localhost',
+        port:27017,
+        db:'testsession'
+    })
 }));
 
 db.connects();
