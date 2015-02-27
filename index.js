@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded());
 //add session support
 app.use(session({
     secret: 'keyboard cat',
+    name:'testsession',
+    cookie:{maxAge:80000},
     resave: false,
     saveUninitialized: true
 }));
