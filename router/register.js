@@ -1,13 +1,13 @@
 /**
  * Created by wang on 15-2-4.
  */
-var User=require('../model/user');
+var UserModel=require('../model/user').userModel;
 
 module.exports.register=function(req,res){
     console.log('post body:'+req.body);
     var account=req.body.account;
     var password=req.body.password;
-    var user=new User({
+    var user=new UserModel({
         account:account,
         password:password
     });

@@ -15,14 +15,14 @@ app.use(bodyParser.urlencoded());
 //add session support
 app.use(session({
     secret: 'keyboard cat',
-    name:'testsession',
+    name:'web_session',
     cookie:{maxAge:80000},
     resave: false,
     saveUninitialized: true,
     store: new MongoStore({
         host:'localhost',
         port:27017,
-        db:'testsession'
+        db:'session_db'
     })
 }));
 

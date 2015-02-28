@@ -18,16 +18,18 @@ module.exports.index = function(app){
     });
 
 	app.get('/hello/:user?',function(req,res){
+        var option={
+            username:''
+        };
 		if(req.params.user){
 			//res.send('hello,'+req.params.user);
+            option.username=req.params.user;
             var username=req.params.user;
             console.log(username);
-            var option={
-                username:req.params.user
-            };
             res.render('user',option);
 		}else{
-			res.send('ni hao,guest');
+            option.username='guest';
+			res.render('user',option);
 		}
 	});
 
