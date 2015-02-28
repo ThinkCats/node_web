@@ -14,18 +14,25 @@ module.exports.index = function(app){
         res.render('about');
 	});
     app.get('/login',function(req,res){
-        res.render('login');
+        if(req.session.user){
+           res.end("You have logined");
+        }else{
+            res.render('login');
+        }
+    });
+
+    app.get('/logout',function(req,res){
+        req.session.destroy();
+        res.end("logout success");
     });
 
 	app.get('/hello/:user?',function(req,res){
         var option={
             username:''
         };
-		if(req.params.user){
+		if(req.session.user){
 			//res.send('hello,'+req.params.user);
-            option.username=req.params.user;
-            var username=req.params.user;
-            console.log(username);
+            option.username=req.session.user;
             res.render('user',option);
 		}else{
             option.username='guest';

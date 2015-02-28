@@ -11,7 +11,6 @@ module.exports.login=function(req,res){
     };
 
     UserModel.findOne(user,function(err,result){
-        console.log(result);
        if(result){
            console.log('login success');
            //add session

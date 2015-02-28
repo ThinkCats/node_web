@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded());
 app.use(session({
     secret: 'keyboard cat',
     name:'web_session',
-    cookie:{maxAge:80000},
+    cookie:{maxAge:900000},
     resave: false,
     saveUninitialized: true,
     store: new MongoStore({
